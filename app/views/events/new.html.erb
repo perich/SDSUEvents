@@ -1,0 +1,14 @@
+<div class="container">
+	<div class="col-md-8 col-md-offset-2">
+		<div class="form-area">
+			<h3>Create an Event</h3>
+			<%= form_for @event do |f| %>
+				<div class="form-group">
+					<%= f.label :body, "Tell us about the event!" %>
+					<%= f.text_area :body, rows: 10, class: "form-control" %>
+				</div>
+				<%= f.submit class: "btn btn-primary" %>
+			<% end %>
+		</div>
+	</div>
+</div> <!-- .container -->
