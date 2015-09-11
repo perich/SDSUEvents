@@ -12,3 +12,9 @@ Greek = Category.create(name: "Greek")
 Professional = Category.create(name: "Professional")
 Concert = Category.create(name: "Concert")
 Other = Category.create(name: "Other")
+
+user = User.create(email: "bob@example.com", password: "football4life", name: "Bob Green")
+
+30.times do
+	Event.create(body: "Hello World!", user_id: 1, category_id: rand(1..6))
+end

@@ -2,7 +2,7 @@ class EventsController < ApplicationController
 	before_action :authenticate_user!, only: [:new, :create, :upvote, :downvote]
 
 	def index
-		@events = Event.all
+		@events = Event.all.order(id: :desc).page(params[:page]).per(10)
 	end
 
 	def new

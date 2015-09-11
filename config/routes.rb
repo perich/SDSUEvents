@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   end
 
   root 'events#index'
+
+  get '/topevents', to: 'pages#topevents', as: 'topevents'
+  get '/randomevents', to: 'pages#randomevents', as: 'randomevents'
 end
