@@ -1,7 +1,8 @@
 class EventsController < ApplicationController
+	before_action :authenticate_user!, only: [:new, :create, :upvote, :downvote]
 
 	def index
-
+		@events = Event.all
 	end
 
 	def new
@@ -10,6 +11,7 @@ class EventsController < ApplicationController
 
 	def create
 		@event = Event.new(event_params)
+		@event.user = current_user
 		if @event.save
 			redirect_to @event
 		else
@@ -20,6 +22,18 @@ class EventsController < ApplicationController
 
 	def show
 		@event = Event.find(params[:id])
+	end
+
+	def upvote
+		@event = Event.find(params[:id])
+		@event.upvote_by(current_user)
+			redirect_to :back
+	end
+
+	def downvote
+		@event = Event.find(params[:id])
+		@event.downvote_by(current_user)
+			redirect_to :back
 	end
 
 	private
