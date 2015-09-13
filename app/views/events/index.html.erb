@@ -1,4 +1,3 @@
-
 <div class="container">
   <p>
     
@@ -20,7 +19,7 @@
            
             <%= link_to "I Don't Care", idc_event_path(event), method: :put, class: "btn btn-warning btn-xs" %><span class="text-warning"> (<%= event.get_downvotes.size %>)</span>
 
-            <a href="#" class="btn btn-link btn-xs">Comments</a><small><em>(300)</em></small>
+            <small><em> <%= link_to 'Comments', event_path(event) %> (300) </em></small>
             <span class="text-muted pull-right"><small>Created by: <%= event.user.name %> on <%= event.created_at.strftime('%B %d, %Y at %l:%M %p') %></small> </span>
             <br>
             <span class="text-muted pull-right"><small>Category: <%= event.category.name %></small></span>

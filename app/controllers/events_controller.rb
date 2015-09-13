@@ -22,6 +22,7 @@ class EventsController < ApplicationController
 
 	def show
 		@event = Event.find(params[:id])
+		@comments = Comment.where(event_id: @event)
 	end
 
 	def upvote
