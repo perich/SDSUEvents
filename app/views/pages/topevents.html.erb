@@ -22,6 +22,8 @@
 
             <a href="#" class="btn btn-link btn-xs">Comments</a><small><em>(300)</em></small>
             <span class="text-muted pull-right"><small>Created by: <%= event.user.name %> on <%= event.created_at.strftime('%B %d, %Y at %l:%M %p') %></small> </span>
+            <br>
+            <span class="text-muted pull-right"><small>Category: <%= event.category.name %></small></span>
        </div>
         <% end %>
       
