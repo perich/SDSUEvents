@@ -1,3 +1,22 @@
+<body>
+  <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '120724578281948',
+      xfbml      : true,
+      version    : 'v2.4'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script> <!-- Facebook SDK -->
+
 <div class="container">
   <p>
       <%= link_to "New Event", new_event_path, class: "btn btn-primary" %>
@@ -13,7 +32,8 @@
         <h4><%= link_to event.title, event_path(event) %></h4>
             <br>
             <p>
-        <%= image_tag event.image.url(:thumb) rescue "No image" %>
+        <%= image_tag event.image.url(:thumb) rescue "No Image" %>
+              
             </p> 
             <br>
         <%= event.body %>
@@ -45,3 +65,4 @@
     </div>
   </div>
 </div>
+</body>

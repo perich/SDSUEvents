@@ -13,8 +13,8 @@ Professional = Category.create(name: "Professional")
 Concert = Category.create(name: "Concert")
 Other = Category.create(name: "Other")
 
-user = User.create(email: "bob@example.com", password: "football4life", name: "Bob Green")
+user = User.create(email: "bob@example.com", password: "football4life", name: "Admin")
 
 30.times do
-	Event.create(title: "sup", body: "Hello World!", user_id: 1, category_id: rand(1..6))
+	Event.create(title: "Title Goes Here", body: "Hello World!", user_id: 1, category_id: rand(1..6))
 end

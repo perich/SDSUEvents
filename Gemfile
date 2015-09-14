@@ -21,6 +21,7 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 gem 'paperclip', "~> 4.3"
+gem 'omniauth-facebook'
 
 # User authentication with Devise
 gem 'devise'

@@ -5,7 +5,7 @@
       <hr>
       <%= image_tag @event.image.url(:large) rescue "No image" %>
       <p><i class="fa fa-clock-o"></i> Posted on <%= @event.created_at.strftime('%B %d, %Y at %l:%M %p') %></p>
-      <p><i class="fa fa-clock-o"></i> by <%= @event.user.name %></p>
+      <p><i class="fa fa-clock-o"></i> by <%= @event.user.name %> <%= image_tag(current_user.avatar.url(:thumb)) %></p>
       <hr>
       <p><%= @event.body %></p>
       <hr>
@@ -27,7 +27,7 @@
    	<% @comments.each do |comment| %>
 	      <div class="media">
 	        <a class="pull-left" href="#">
-	          <img class="media-object" src="http://placehold.it/64x64" alt="">
+	          <%= image_tag(current_user.avatar.url(:thumb)) %>
 	        </a>
 	        <div class="media-body">
 	          <h4 class="media-heading"> <%= comment.user.name %>
