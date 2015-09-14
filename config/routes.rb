@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   	member do
   		put :going, to:'events#upvote'
   		put :idc, to:'events#downvote'
+    end
+    collection do
+      get :search
   	end
   end
 

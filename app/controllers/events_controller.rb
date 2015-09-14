@@ -37,10 +37,19 @@ class EventsController < ApplicationController
 			redirect_to :back
 	end
 
+	def search
+		if params[:search].blank?
+			@events = Event.all
+		else
+			@events = Event.search(params)
+		end
+	end
+
 	private
 
 		def event_params
-			params.require(:event).permit(:body)
+			params.require(:event).permit(:body, :category_id)
 		end
+
 
 end

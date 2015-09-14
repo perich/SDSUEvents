@@ -1,44 +1,4 @@
-<div class="container">
-  <p>
-    
-      <%= link_to "New Event", new_event_path, class: "btn btn-primary" %>
-    
-  </p>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="col-md-8">
-      <% @events.each do |event| %>
-
-      <div class="well">
-        <%= event.body %>
-            <br>
-            <br>
-
-            <%= link_to "I'm Going!", going_event_path(event), method: :put, class: "btn btn-success btn-xs" %><span class="text-success"> (<%= event.get_upvotes.size %>)</span>
-           
-            <%= link_to "I Don't Care", idc_event_path(event), method: :put, class: "btn btn-warning btn-xs" %><span class="text-warning"> (<%= event.get_downvotes.size %>)</span>
-
-            <small><em> <%= link_to 'Comments', event_path(event) %> (300) </em></small>
-            <span class="text-muted pull-right"><small>Created by: <%= event.user.name %> on <%= event.created_at.strftime('%B %d, %Y at %l:%M %p') %></small> </span>
-            <br>
-            <span class="text-muted pull-right"><small>Category: <%= event.category.name %></small></span>
-       </div>
-        <% end %>
-      
-    </div>
-    <div class="col-md-4 col-sm-12">
-      <div class="panel panel-default">
-        <div class="panel-heading text-center">Categories</div>
-        <ul class="list-group">
-          <% Category.all.each do |category| %>
-            <li class="list-group-item"><%= link_to category.name, category_path(category) %></li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+<%= render partial: 'layouts/events', events: @events %>
 <div class="container">
   <%= paginate @events %>
 </div>
