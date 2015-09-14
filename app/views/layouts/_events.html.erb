@@ -9,6 +9,9 @@
       <% @events.each do |event| %>
 
       <div class="well">
+
+        <h4><%= link_to event.title, event_path(event) %></h4>
+            <br>
         <%= event.body %>
             <br>
             <br>

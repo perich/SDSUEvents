@@ -16,5 +16,5 @@ Other = Category.create(name: "Other")
 user = User.create(email: "bob@example.com", password: "football4life", name: "Bob Green")
 
 30.times do
-	Event.create(body: "Hello World!", user_id: 1, category_id: rand(1..6))
+	Event.create(title: "sup", body: "Hello World!", user_id: 1, category_id: rand(1..6))
 end

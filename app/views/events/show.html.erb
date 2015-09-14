@@ -1,11 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
+      <p class="lead"><%= @event.title %></p>
       <hr>
       <p><i class="fa fa-clock-o"></i> Posted on <%= @event.created_at.strftime('%B %d, %Y at %l:%M %p') %></p>
       <p><i class="fa fa-clock-o"></i> by <%= @event.user.name %></p>
       <hr>
-      <p class="lead"><%= @event.body %></p>
+      <p><%= @event.body %></p>
       <hr>
 
       <div class="well">
