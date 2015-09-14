@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150911033506) do
+ActiveRecord::Schema.define(version: 20150914030344) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -42,6 +42,10 @@ ActiveRecord::Schema.define(version: 20150911033506) do
     t.integer  "cached_weighted_score",   default: 0
     t.integer  "cached_weighted_total",   default: 0
     t.float    "cached_weighted_average", default: 0.0
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "events", ["cached_votes_down"], name: "index_events_on_cached_votes_down"
@@ -68,6 +72,10 @@ ActiveRecord::Schema.define(version: 20150911033506) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

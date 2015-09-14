@@ -2,8 +2,13 @@
 	<div class="col-md-8 col-md-offset-2">
 		<div class="form-area">
 			<h3>Create an Event</h3>
-			<%= form_for @event do |f| %>
+			<%= form_for @event, html: { multipart: true } do |f| %>
 				
+				<div class="form-group">
+					<%= f.label :image %>
+					<%= f.file_field :image %>
+				</div>
+
 				<div class="form-group">
 					<%= f.label :title, "Title of the event" %>
 					<%= f.text_area :title, rows: 1, class: "form-control" %>
