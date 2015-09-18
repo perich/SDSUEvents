@@ -5,6 +5,8 @@
         <h3 class="panel-title">Sign Up</h3>
       </div>
 
+    <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+
     <div class="panel-body">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
