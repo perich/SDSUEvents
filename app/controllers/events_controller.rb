@@ -1,17 +1,27 @@
 class EventsController < ApplicationController
-	before_action :authenticate_user!, only: [:new, :create, :upvote, :downvote]
+	before_action :authenticate_user!, only: [:new, :create, :upvote, :downvote, :edit, :update, :destroy]
 
 	def index
 		@events = Event.all.order(id: :desc).page(params[:page]).per(10)
 	end
 
-	def new
-		@event = Event.new
+	def show
+		@event = Event.find(params[:id])
+		@comments = Comment.where(event_id: @event)
 	end
 
+	def new
+		@event = current_user.events.build
+	end
+
+	def edit
+		@event = Event.find(params[:id])
+	end
+
+	
+
 	def create
-		@event = Event.new(event_params)
-		@event.user = current_user
+		@event = current_user.events.build(event_params)
 		if @event.save
 			redirect_to @event
 		else
@@ -20,10 +30,21 @@ class EventsController < ApplicationController
 		end
 	end
 
-	def show
+	def update
 		@event = Event.find(params[:id])
-		@comments = Comment.where(event_id: @event)
+	    if @event.update(event_params)
+	      redirect_to @event, notice: 'Event was successfully updated.'
+	    else
+	      render action: 'edit'
+	  end
 	end
+
+	def destroy
+		@event = Event.find(params[:id])
+		@event.destroy
+		redirect_to events_url
+	end
+
 
 	def upvote
 		@event = Event.find(params[:id])
@@ -46,6 +67,10 @@ class EventsController < ApplicationController
 	end
 
 	private
+
+		def set_event
+      		@event = Event.find(params[:id])
+    	end
 
 		def event_params
 			params.require(:event).permit(:title, :body, :image, :category_id)

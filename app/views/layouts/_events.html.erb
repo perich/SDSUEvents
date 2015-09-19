@@ -19,7 +19,7 @@
 
 <div class="container">
   <p>
-      <%= link_to "New Event", new_event_path, class: "btn btn-success" %>
+      <%= link_to "Create New Event", new_event_path, class: "btn btn-lg btn-success" %>
   </p>
 </div>
 <div class="container">
@@ -29,7 +29,7 @@
 
       <div class="well">
 
-        <h4><%= link_to event.title, event_path(event) %></h4>
+        <h2><%= link_to event.title, event_path(event) %></h2>
             <br>
             <p>
         <%= image_tag event.image.url(:thumb) rescue "No Image" %>
