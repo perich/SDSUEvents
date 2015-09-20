@@ -6,13 +6,26 @@ class User < ActiveRecord::Base
 
   has_many :events
   has_many :comments
+  has_many :images
   
+  def largeimage
+    "http://graph.facebook.com/#{self.uid}/picture?type=large"
+  end
+
+  def mediumimage
+    "http://graph.facebook.com/#{self.uid}/picture?type=normal"
+  end
+
+  def smallimage
+    "http://graph.facebook.com/#{self.uid}/picture?type=small"
+  end
 
   def self.from_omniauth(auth)
   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
     user.email = auth.info.email
     user.password = Devise.friendly_token[0,20]
     user.name = auth.info.name   # assuming the user model has a name
+    user.image = auth.info.image
   end
 end
 

@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
+      <div class="well">
       <h2><%= @event.title %></h2>
       <hr>
       <%= image_tag @event.image.url(:large) rescue "No image" %>
@@ -43,8 +44,10 @@
 
    
    	<% @comments.each do |comment| %>
+     <div class="well">
 	      <div class="media">
 	        <div class="media-body">
+            <%= image_tag(comment.user.mediumimage) %>
 	          <h4 class="media-heading"> <%= comment.user.name %>
 	            <small><%= comment.created_at.strftime('%B %d, %Y at %l:%M %p') %></small>
 	          </h4>
@@ -52,7 +55,9 @@
 	         
 	        </div>
 	      </div>
+      </div>
       <% end %>
     </div>
   </div>
+</div>
 </div>

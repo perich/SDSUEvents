@@ -1,14 +1,16 @@
 body {padding: 40px;}
 body { padding-top: 60px;}
 
-/* body {
+body {
   line-height: 1.5;
   color: white;
-  background: url('https://upload.wikimedia.org/wikipedia/commons/0/0a/Sdsumain.jpg');
+  background: url('http://i.imgur.com/Lv5WvKk.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-} */
+} 
+
+
 
 
 .float-right {
@@ -19,27 +21,14 @@ body { padding-top: 60px;}
   clear: both;
 }
 
-.btn-success:focus,
-.btn-success:active,
-.btn-success.active
-{
-  background-color: #ffffff;
-}
-
-.btn-success:hover
-{
-  background-color: #ebebeb;
-}
 
 /* to do list:
 
 	- add hover states for buttons
 	- add SDSU branding
 	- add jumbotron explaining the website to frontpage
-	- allow posts to be editable
 	- prevent users from changing name
 	- implement web crawling
-	- implement user management system (banning/deleting)
 
 	*/
 
