@@ -10,6 +10,10 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require jquery-ui
+ *= require pickadate/default
+ *= require pickadate/default.date
+ *= require pickadate/default.time
  *= require_tree .
  *= require_self
  */
@@ -23,19 +27,24 @@ body {padding: 40px;}
 body { padding-top: 60px;}
 
 body { 
+  height: 100%;
   background: url('http://i.imgur.com/Lv5WvKk.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 } 
 
+.footer .footcontainer {
+	height: 60px;
+	padding-top: 60px;
+	background: black;
+	margin: 0 auto;
+	width: auto;
+}
+
 .jumbotron{
 	padding: 15px; 
 }
-
-
-
-
 
 .float-right {
     float: right;

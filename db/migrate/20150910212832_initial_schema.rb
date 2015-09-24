@@ -3,6 +3,8 @@ class InitialSchema < ActiveRecord::Migration
 
   	create_table :events do |t|
       t.string :title
+      t.string :date
+      t.string :time
   		t.text :body
   		t.timestamps
   end

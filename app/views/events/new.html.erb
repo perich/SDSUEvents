@@ -1,6 +1,4 @@
-
 <div class="container">
-  
 	<div class="col-md-8 col-md-offset-2">
 		<div class="well">
 		<div class="form-area">
@@ -18,7 +16,18 @@
 				</div>
 
 				<div class="form-group">
-					<%= f.label :body, "Tell us about the event!" %>
+					<%= f.label :date %>
+					<%= f.text_field :date, class: "form-control" %>
+				</div>
+
+				<div class="form-group">
+					<%= f.label :time, "Start Time" %>
+					<%= f.text_field :time, class: "form-control" %>
+
+				<br>
+
+				<div class="form-group">
+					<%= f.label :body, "Include all the details about your event here." %>
 					<%= f.text_area :body, rows: 10, class: "form-control" %>
 				</div>
 				<div class="form-group">
