@@ -20,3 +20,4 @@
 //= require turbolinks
 //= require_tree .
 
+alert("Hello! I am an alert box!!");
