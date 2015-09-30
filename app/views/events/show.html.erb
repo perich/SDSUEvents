@@ -17,11 +17,13 @@
         <% end %>
 
         <br>
-        <% if 1 == current_user.id %>
+      <% if user = current_user %> <!-- this line is neccesary or else this view will crash when user is not signed in -->
+        <% if 1 == current_user.id %> <!-- .id breaks this if there is no current_user, so we check first for current_user above -->
           <%= link_to @event, method: :delete, data: { confirm: 'Are you sure you want to delete this event?' } do %>
                 Delete
            <% end %>
         <% end %>
+      <% end %>
 
         <% if @event.user == current_user %>
             <%= link_to @event, method: :delete, data: { confirm: 'Are you sure you want to delete this event?' } do %>
