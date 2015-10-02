@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   root 'events#index'
 
+  get '/contact', to: 'pages#contact', as: 'contact'
   get '/topevents', to: 'pages#topevents', as: 'topevents'
   get '/randomevents', to: 'pages#randomevents', as: 'randomevents'
   get 'category/:id', to: 'categories#show', as: 'category'

@@ -21,7 +21,7 @@
         </ul>
   
         <ul class="nav navbar-nav navbar-right">
-
+         
           <% if user_signed_in? %>
             <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
             <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
@@ -29,6 +29,7 @@
             <li> <%= link_to "Sign in", new_user_session_path %> </li>
             <li> <%= link_to "Sign up", new_user_registration_path %> </li>
           <% end %>
+          <li><%= link_to "Contact" %> </li>
         </ul>
 
         <!-- Search by string -->
