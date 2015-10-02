@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require google_analytics
 //= require jquery.turbolinks
 //= require pickadate/picker 
 //= require pickadate/picker.date 
