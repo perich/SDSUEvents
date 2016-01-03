@@ -22,6 +22,10 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'bootswatch/simplex/bootswatch';
+@import 'font-awesome';
+@import 'summernote';
+@import 'codemirror';
+@import 'codemirror/themes/solarized';
 
 body {padding: 40px;}
 body { padding-top: 60px;}

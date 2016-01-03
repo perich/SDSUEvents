@@ -32,6 +32,10 @@ gem 'omniauth-facebook'
 gem 'devise'
 # Bootstrap
 gem 'bootstrap-sass', '~> 3.3.5'
+gem 'summernote-rails'
+gem 'codemirror-rails'
+gem 'simple_form'
+gem 'font-awesome-rails' # required
 gem 'bootswatch-rails'
 gem 'kaminari', '~> 0.16.3'
 gem 'acts_as_votable', '~> 0.10.0'
